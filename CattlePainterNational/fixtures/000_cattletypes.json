@@ -1,0 +1,18 @@
+[
+{
+  "fields": {
+    "surface_area": 3.5,
+    "name": "Hereford"
+  },
+  "model": "paintjobs.cattlespecies",
+  "pk": 1
+},
+{
+  "fields": {
+    "surface_area": 2.5,
+    "name": "Ongole"
+  },
+  "model": "paintjobs.cattlespecies",
+  "pk": 2
+}
+]
