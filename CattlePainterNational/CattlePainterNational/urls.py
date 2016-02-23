@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from paintjobs import views as pjviews
 
 urlpatterns = [
-    url(r'^$', include('paintjobs.urls')),
+    url(r'^$', pjviews.index, name='index'),
+    url(r'^oom$', pjviews.oom, name='oom'),
+    url(r'^raise$', pjviews.raise_e, name='raise_e'),
+    url(r'^faffing$', pjviews.faffing, name='faffing'),
     url(r'^admin/', include(admin.site.urls)),
 ]
