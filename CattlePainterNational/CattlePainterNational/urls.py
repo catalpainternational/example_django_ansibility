@@ -19,8 +19,12 @@ from paintjobs import views as pjviews
 
 urlpatterns = [
     url(r'^$', pjviews.index, name='index'),
-    url(r'^oom$', pjviews.oom, name='oom'),
     url(r'^raise$', pjviews.raise_e, name='raise_e'),
+    url(r'^stdout$', pjviews.shoutstdout, name='shoutstdout'),
+    url(r'^stderr$', pjviews.shoutstderr, name='shoutstderr'),
+    url(r'^oom$', pjviews.oom, name='oom'),
+    url(r'^oom/(?P<mb>[0-9]+)$', pjviews.oom, name='oom'),
     url(r'^faffing$', pjviews.faffing, name='faffing'),
+    url(r'^faffing/(?P<duration>[0-9]+)$', pjviews.faffing, name='faffing'),
     url(r'^admin/', include(admin.site.urls)),
 ]
