@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^oom/(?P<mb>[0-9]+)$', pjviews.oom, name='oom'),
     url(r'^faffing$', pjviews.faffing, name='faffing'),
     url(r'^faffing/(?P<duration>[0-9]+)$', pjviews.faffing, name='faffing'),
+    url(r'^testcache$', pjviews.testcache, name='testcache'),
     url(r'^admin/', include(admin.site.urls)),
 ]

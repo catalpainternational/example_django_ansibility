@@ -5,6 +5,8 @@ from django.template import loader
 from .models import Paintjob
 import time
 import sys
+from datetime import datetime
+from django.views.decorators.cache import cache_page
 
 # Create your views here.
 def index(request):
@@ -38,3 +40,8 @@ def shoutstderr(request, text="Hurray for STDERR!"):
     print(text, file=sys.stderr)
     sys.stderr.flush()
     return HttpResponse("I wrote '%s' to stderr and flushed." % text)
+
+@cache_page(60)
+def testcache(request):
+    return HttpResponse("My UTC wall clock time is <b>%s</b>. I'm caching this response \
+    for a minute, so you should see the same time if you refresh within this minute." % datetime.utcnow().isoformat())
