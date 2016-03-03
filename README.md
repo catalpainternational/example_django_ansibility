@@ -6,6 +6,7 @@ those conventions, and, since it's versioned, serves as a record of their histor
 
 It will need to co-evolve with our Ansible recipes.
 
+To deploy this project with Ansible, check out the STANDALONE_DJANGO_README.md in the Ansible repo.
 
 # Notes
 
