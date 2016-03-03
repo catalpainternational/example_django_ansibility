@@ -8,7 +8,6 @@ import sys
 from datetime import datetime
 from django.views.decorators.cache import cache_page
 
-# Create your views here.
 def index(request):
     job_list = Paintjob.objects.order_by('-due_date')
     template = loader.get_template('paintjobs/index.html')
@@ -47,3 +46,7 @@ def shoutstderr(request, text="Hurray for STDERR!"):
 def testcache(request):
     return HttpResponse("My UTC wall clock time is <b>%s</b>. I'm caching this response \
     for a minute, so you should see the same time if you refresh within this minute." % datetime.utcnow().isoformat())
+
+def whatscheme(request):
+    scheme = {True:'HTTPS', False:'HTTP'}[request.is_secure()]
+    return HttpResponse("""I think I'm on:<br/>%s""" % scheme)
