@@ -28,8 +28,10 @@ def oom(request, mb='512'):
 
 def faffing(request, duration='3600'):
     duration = float(duration)
+    starttime = time.time()
     time.sleep(duration)
-    return HttpResponse("I slept for %d seconds in this request." % duration)
+    slept = int(time.time() - starttime)
+    return HttpResponse("I tried to sleep for %d seconds in this request.<br/> I've slept for %d seconds." % (duration, slept))
 
 def shoutstdout(request, text="Hurray for STDOUT!"):
     print(text, file=sys.stdout)
