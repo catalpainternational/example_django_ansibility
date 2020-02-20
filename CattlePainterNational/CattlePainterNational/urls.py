@@ -28,5 +28,6 @@ urlpatterns = [
     url(r'^faffing/(?P<duration>[0-9]+)$', pjviews.faffing, name='faffing'),
     url(r'^testcache$', pjviews.testcache, name='testcache'),
     url(r'^whatscheme$', pjviews.whatscheme, name='whatscheme'),
+    url(r'^browserquotum$', pjviews.browserquotum, name='browserquotum'),
     url(r'^admin/', include(admin.site.urls)),
 ]

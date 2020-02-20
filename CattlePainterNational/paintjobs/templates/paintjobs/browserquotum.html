@@ -1,0 +1,22 @@
+<head>
+<title>
+CattlepainterNational
+</title>
+</head>
+<body>
+<h1>Browser quotum test</h1>
+<hr/>
+<p>
+You're currently using about <span id="used"></span> MB of a quotum of <span id="quotum"></span> MB.
+</p>
+<script>
+function nicer_number(b) {
+	return Math.round(b/2**20);
+}
+
+navigator.storage.estimate().then(function(estimate) {
+  document.getElementById("used").innerHTML = nicer_number(estimate.usage);
+  document.getElementById("quotum").innerHTML = nicer_number(estimate.quota);
+});
+</script>
+</body>

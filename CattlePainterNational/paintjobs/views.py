@@ -50,3 +50,8 @@ def testcache(request):
 def whatscheme(request):
     scheme = {True:'HTTPS', False:'HTTP'}[request.is_secure()]
     return HttpResponse("""I think I'm on:<br/>%s""" % scheme)
+
+def browserquotum(request):
+    template = loader.get_template('paintjobs/browserquotum.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
