@@ -5,6 +5,6 @@ class CattleSpecies(models.Model):
   surface_area = models.FloatField()
 
 class Paintjob(models.Model):
-  cattle_species = models.ForeignKey(CattleSpecies)
+  cattle_species = models.ForeignKey(CattleSpecies, on_delete=models.CASCADE)
   amount = models.IntegerField()
   due_date = models.DateTimeField('Due date')
